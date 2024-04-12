@@ -8,6 +8,8 @@ function App() {
     password: "",
   });
 
+  const [data, displayData] = useState(formData);
+
   const inputEvent = (e) => {
     const val = e.target.value;
     const name = e.target.name;
@@ -37,6 +39,7 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    displayData(formData);
   };
 
   return (
@@ -74,7 +77,7 @@ function App() {
       >
         <h2>Form Data :</h2>
         <p>
-          {formData.name} {formData.mail} {formData.password}
+          {data.name} {data.mail} {data.password}
         </p>
       </div>
     </div>
